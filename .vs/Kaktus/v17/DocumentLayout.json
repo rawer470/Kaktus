@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\timon\\source\\repos\\Kaktus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\appsettings.json",
+              "RelativeDocumentMoniker": "Kaktus\\appsettings.json",
+              "ToolTip": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\appsettings.json",
+              "RelativeToolTip": "Kaktus\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-28T17:03:29.372Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
