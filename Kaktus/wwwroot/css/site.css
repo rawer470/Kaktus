@@ -13,10 +13,19 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+   
 }
 
 body {
-  margin-bottom: 60px;
+    /* margin-bottom: 60px; */
+    background-color: #ECE9D6;
+}
+.textKaktus {
+    font-size: 20px;
+    color: #223f27;
+}
+.navheader {
+    background-color: #ECE9D6;
 }
