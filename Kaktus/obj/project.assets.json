@@ -9,19 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\timon\\.nuget\\packages\\": {},
-    "D:\\Программы\\Visual Studio\\Packed\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Kaktus\\Kaktus\\Kaktus.csproj",
+      "projectUniqueName": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Kaktus.csproj",
       "projectName": "Kaktus",
-      "projectPath": "E:\\Kaktus\\Kaktus\\Kaktus.csproj",
+      "projectPath": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Kaktus.csproj",
       "packagesPath": "C:\\Users\\timon\\.nuget\\packages\\",
-      "outputPath": "E:\\Kaktus\\Kaktus\\obj\\",
+      "outputPath": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Программы\\Visual Studio\\Packed\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\timon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
