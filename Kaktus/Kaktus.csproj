@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Views\Shared\LOGO.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\LOGO.svg" />
+  </ItemGroup>
+
 </Project>
