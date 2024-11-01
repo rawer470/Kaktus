@@ -10,8 +10,4 @@
     <Content Include="Views\Shared\LOGO.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Content\" />
-  </ItemGroup>
-
 </Project>
