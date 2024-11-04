@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\Kaktus.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\Content\\Logo.png",
-      "PackagePath": "staticwebassets\\Content\\Logo.png"
-    },
-    {
       "Id": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

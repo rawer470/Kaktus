@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OJQyO94CP58ZSwwD7qAQ/OvB3VcI+vWzQYsfqYOAM+A=",
+  "Hash": "4Y22/TiP45/9iu0PAFzSSSEix+h/3NtAMIqB9kXz/fE=",
   "Source": "Kaktus",
   "BasePath": "_content/Kaktus",
   "Mode": "Default",
@@ -53,25 +53,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Kaktus.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\Content\\Logo.png",
-      "SourceId": "Kaktus",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\",
-      "BasePath": "_content/Kaktus",
-      "RelativePath": "Content/Logo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Content\\Logo.png"
     },
     {
       "Identity": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\css\\site.css",
