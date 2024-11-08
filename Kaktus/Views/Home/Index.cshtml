@@ -16,7 +16,7 @@
                 </svg>
             </a>
         </div>
-         
+
         <div style="display:flex;">
             <a data-bs-toggle="collapse" href="#Upload" role="button" aria-expanded="false" aria-controls="Upload">
                 <!--Cloud-->
@@ -26,7 +26,7 @@
                 </svg>
             </a>
         </div>
-        
+
         <div style="display:flex;">
             <a data-bs-toggle="collapse" href="#Share" role="button" aria-expanded="false" aria-controls="Share">
                 <!--Folder-->
@@ -35,24 +35,44 @@
                 </svg>
             </a>
         </div>
-          
+
     </div>
-    <div class="collapse" id="AddFile">
-        <div class="card card-body">
-            The addition of a function is currently being developed Add File
+    <div id="target-container">
+        <div class="collapse" id="AddFile">
+            <div class="card card-body">
+                The addition of a function is currently being developed Add File
+            </div>
         </div>
-    </div>
-    <div class="collapse" id="Upload">
-        <div class="card card-body">
-            The addition of a function is currently being developed Upload File
+        <div class="collapse" id="Upload">
+            <div class="card card-body">
+                The addition of a function is currently being developed Upload File
+            </div>
         </div>
-    </div>
-    <div class="collapse" id="Share">
-        <div class="card card-body">
-            The addition of a function is currently being developed Share File
+        <div class="collapse" id="Share">
+            <div class="card card-body">
+                The addition of a function is currently being developed Share File
+            </div>
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const collapseElements = document.querySelectorAll('#target-container .collapse');
+            collapseElements.forEach(collapseEl => {
+                new bootstrap.Collapse(collapseEl, { toggle: false, parent: '#target-container' });
+            })
+            document.addEventListener('click', (e) => {
+                if (!e.target.dataset.target) {
+                    return;
+                }
+                const collapseElement = document.querySelector(e.target.dataset.target);
+                const collapse = bootstrap.Collapse.getInstance(collapseElement);
+                collapse.toggle();
+            });
+
+        });
+    </script>
     <div class="HistoryDiv">
         @for (int i = 0; i < 4; i++)
         {

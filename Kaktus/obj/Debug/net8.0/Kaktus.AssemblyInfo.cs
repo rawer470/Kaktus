@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kaktus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b34ab18e00f1e12050c8f7c633913270399a9ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86cad7e2cdd4b3f50074334b8fb1d8be70ef710c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kaktus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kaktus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
