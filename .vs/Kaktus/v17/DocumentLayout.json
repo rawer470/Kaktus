@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\timon\\source\\repos\\Kaktus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|c:\\users\\timon\\source\\repos\\kaktus\\kaktus\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BF4D641-9789-4F74-B9A5-2B12E460A1E6}|Kaktus\\Kaktus.csproj|solutionrelative:kaktus\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,37 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Kaktus\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Kaktus\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAADcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-31T15:02:18.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Kaktus\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\wwwroot\\css\\site.css",
               "RelativeToolTip": "Kaktus\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAE4AAAAUAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-30T22:23:33.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Kaktus\\Controllers\\HomeController.cs",
@@ -79,20 +79,20 @@
               "RelativeDocumentMoniker": "Kaktus\\Views\\Home\\Privacy.cshtml",
               "ToolTip": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "Kaktus\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-30T23:04:59.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Kaktus\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\timon\\source\\repos\\Kaktus\\Kaktus\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Kaktus\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-30T22:23:40.711Z",
               "EditorCaption": ""

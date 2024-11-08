@@ -64,7 +64,7 @@ body {
     display:flex;
     width:100%;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
     background-color: #41230E;
     border-radius: 5px;
     padding: 5px;
