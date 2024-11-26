@@ -15,21 +15,29 @@ namespace Kaktus.Controllers
             return View();
         }
 
+
         public IActionResult Privacy()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddFileAA(FileViewModel file)
+        public IActionResult AddFile(IFormFile file, string name, string tag, string emailTo)
         {
-            if (ModelState.IsValid)
+            FileViewModel fileViewModel = new FileViewModel()
             {
-                return Content("OK");
+                File = file,
+                Name = name,
+                Tag = tag,
+                EmailTo = emailTo
+            };
+            if (fileViewModel.IsValid())
+            {
+                return RedirectToAction("Index");
             }
             else
             {
-                return RedirectToAction("Index", file);
+                return Content("MODEL INVALID! \n The next update developed");
             }
         }
 
