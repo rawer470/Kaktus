@@ -20,7 +20,18 @@ namespace Kaktus.Controllers
             return View();
         }
 
-       
+        [HttpPost]
+        public IActionResult AddFileAA(FileViewModel file)
+        {
+            if (ModelState.IsValid)
+            {
+                return Content("OK");
+            }
+            else
+            {
+                return RedirectToAction("Index", file);
+            }
+        }
 
     }
 }

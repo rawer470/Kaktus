@@ -1,9 +1,16 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Kaktus.Models;
 
 public class FileViewModel
 {
+    [Required]
     public IFormFile File { get; set; }
-    public int MyProperty { get; set; }
+    [Required]
+    public string Name { get; set; }
+    [Required]
+    public string Tag { get; set; }
+    [EmailAddress]
+    public string EmailTo { get; set; }
 }
