@@ -5,8 +5,9 @@ namespace Kaktus.Models;
 
 public class FileViewModel
 {
-    public IFormFile File { get; set; }
+    [Required]
     public string Name { get; set; }
+    [Required]
     public string Tag { get; set; }
     [EmailAddress]
     public string EmailTo { get; set; }
@@ -17,7 +18,7 @@ public class FileViewModel
     /// <returns></returns>
     public bool IsValid()
     {
-        if (File != null && Name != null && Tag != null && EmailTo != null) { return true; }
+        if (Name != null && Tag != null && EmailTo != null) { return true; }
         return false;
     }
 }

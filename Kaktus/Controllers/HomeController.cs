@@ -12,7 +12,11 @@ namespace Kaktus.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new FileViewModel(){
+                Name="Write in file name",
+                Tag = "#000000",
+                EmailTo = "example@example.com"
+            });
         }
 
 
@@ -22,23 +26,17 @@ namespace Kaktus.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddFile(IFormFile file, string name, string tag, string emailTo)
+        public IActionResult AddFile(IFormFile file, FileViewModel model)
         {
-            FileViewModel fileViewModel = new FileViewModel()
-            {
-                File = file,
-                Name = name,
-                Tag = tag,
-                EmailTo = emailTo
-            };
-            if (fileViewModel.IsValid())
+            if (ModelState.IsValid && file != null)
             {
                 return RedirectToAction("Index");
             }
             else
             {
-                return Content("MODEL INVALID! \n The next update developed");
+               //return RedirectToAction("Index", model);
             }
+            return Content("");
         }
 
     }
