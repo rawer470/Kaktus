@@ -10,13 +10,9 @@ namespace Kaktus.Controllers
     public class HomeController : Controller
     {
 
-        public IActionResult Index()
+        public IActionResult Index(FileViewModel model)
         {
-            return View(new FileViewModel(){
-                Name="Write in file name",
-                Tag = "#000000",
-                EmailTo = "example@example.com"
-            });
+            return View(new FileViewModel());
         }
 
 
@@ -34,9 +30,9 @@ namespace Kaktus.Controllers
             }
             else
             {
-               //return RedirectToAction("Index", model);
+                return View("Index", model);
             }
-            return Content("");
+
         }
 
     }
