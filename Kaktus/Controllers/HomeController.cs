@@ -4,11 +4,18 @@ using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using System.Text.Json;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Kaktus.NotifyClasses;
 
 namespace Kaktus.Controllers
 {
     public class HomeController : Controller
     {
+
+        public HomeController(INotyfService notifyService)
+        {
+            Notify.Configure(notifyService);
+        }
 
         public IActionResult Index(FileViewModel model)
         {
@@ -22,14 +29,16 @@ namespace Kaktus.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddFile(IFormFile file, FileViewModel model)
+        public IActionResult AddFile(FileViewModel model) //IFormFile file, 
         {
-            if (ModelState.IsValid && file != null)
+            if (ModelState.IsValid)
             {
+                Notify.ShowSuccess("File uploaded", 5);
                 return RedirectToAction("Index");
             }
             else
             {
+                Notify.ShowError("Incorrect data, refill the form", 5);
                 return View("Index", model);
             }
 

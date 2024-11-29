@@ -10,4 +10,8 @@
     <Content Include="Views\Shared\LOGO.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
+  </ItemGroup>
+
 </Project>
