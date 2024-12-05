@@ -1,11 +1,20 @@
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
+using Kaktus.Data;
+using Kaktus.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
+builder.Services.AddDbContext<Context>(options =>
+ options.UseNpgsql(builder.Configuration.GetConnectionString("MyDatabase")));
+builder.Services.AddIdentity<User, IdentityRole>().
+   AddEntityFrameworkStores<Context>().
+   AddDefaultTokenProviders();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +32,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.UseNotyf();
+app.UseAuthentication();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
