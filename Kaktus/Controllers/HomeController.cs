@@ -7,6 +7,7 @@ using System.Text.Json;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Kaktus.NotifyClasses;
 using Kaktus.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kaktus.Controllers
 {
@@ -16,19 +17,14 @@ namespace Kaktus.Controllers
         public HomeController(INotyfService notifyService, Context context)
         {
             Notify.Configure(notifyService);
-            context.Users.Add(new Models.User{
-                UserName ="Test",
-                
-            });
-            context.SaveChanges();
         }
 
+        [Authorize]
         public IActionResult Index(FileViewModel model)
         {
             return View(new FileViewModel());
         }
-
-
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
