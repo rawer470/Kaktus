@@ -8,7 +8,11 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -26,6 +30,7 @@ body {
     font-size: 25px;
     color: #223f27;
 }
+
 .textKaktusLight {
     font-size: 25px;
     color: #ECE9D6;
@@ -60,27 +65,30 @@ body {
     flex-direction: column;
     align-content: stretch;
 }
+
 .Icons-FileUI {
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-around;
     background-color: #41230E;
     border-radius: 5px;
     padding: 5px;
-    min-height:50px;
+    min-height: 50px;
 }
 
 .HistoryDiv {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    width:100%;
-    margin-top:15px;
+    width: 100%;
+    margin-top: 15px;
 }
+
 .FileEdit {
     display: flex;
 }
+
 .FileHist {
     display: flex;
     background-color: #89945C;
@@ -89,7 +97,7 @@ body {
     padding: 5px;
     align-items: center;
     min-height: 50px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 .upload-button {
@@ -100,3 +108,23 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.input-button-container {
+    display: flex;
+    border: 1px solid #aaa;
+    border-radius: 4px; /* Для скругления углов */
+  }
+  
+  .input-button-container input {
+    flex-grow: 1; /* Поле занимает всё доступное пространство */
+    border: none; /* Границы отсутствуют */
+    padding: 5px;
+    outline: none; /* Очертание при фокусе отсутствует */
+  }
+  
+  .input-button-container a {
+    color: #000000;
+    border: none;
+    padding: 5px;
+    cursor: pointer; /* Курсор в виде указателя */
+  }
