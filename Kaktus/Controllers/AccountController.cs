@@ -45,7 +45,7 @@ namespace Kaktus.Controllers
 
                     if (result.Succeeded)
                     {
-                        Notify.ShowSuccess("Success",5);
+                        Notify.ShowSuccess("Success", 5);
                         return Redirect(returnUrl ?? "/");
                     }
                 }
@@ -68,12 +68,17 @@ namespace Kaktus.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Registration(RegistrationModel model)
         {
+
             if (ModelState.IsValid)
             {
+
+                if (model.Password != model.RepeatPassword)
+                {
+                    ModelState.AddModelError("password", "Passwords don't match");
+                    return View(model);
+                }
                 User user = new User() { UserName = model.Name, Email = model.EmailAddress };
-
                 IdentityResult result = await userManager.CreateAsync(user, model.Password);
-
                 if (result.Succeeded)
                 {
                     await signInManager.SignOutAsync();
@@ -89,6 +94,7 @@ namespace Kaktus.Controllers
                         ModelState.AddModelError("", error.Description);
                     }
                 }
+
             }
 
 
