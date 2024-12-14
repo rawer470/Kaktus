@@ -35,6 +35,12 @@ namespace Kaktus.Controllers
         {
             if (ModelState.IsValid)
             {
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var uploadedDirectory = Path.Combine(currentDirectory, $"UploadFiles\\{User.Identity.Name}");
+                if (!Directory.Exists(uploadedDirectory))
+                {
+                    Directory.CreateDirectory(uploadedDirectory);
+                }
                 Notify.ShowSuccess("File uploaded", 5);
                 return RedirectToAction("Index");
             }

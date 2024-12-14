@@ -72,11 +72,6 @@ namespace Kaktus.Controllers
             if (ModelState.IsValid)
             {
 
-                if (model.Password != model.RepeatPassword)
-                {
-                    ModelState.AddModelError("password", "Passwords don't match");
-                    return View(model);
-                }
                 User user = new User() { UserName = model.Name, Email = model.EmailAddress };
                 IdentityResult result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
