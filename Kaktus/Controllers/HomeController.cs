@@ -37,9 +37,11 @@ namespace Kaktus.Controllers
             {
                 var currentDirectory = Directory.GetCurrentDirectory();
                 var uploadedDirectory = Path.Combine(currentDirectory, $"UploadFiles\\{User.Identity.Name}");
-                if (!Directory.Exists(uploadedDirectory))
+                if (!Directory.Exists(uploadedDirectory)) { Directory.CreateDirectory(uploadedDirectory); }
+                var filepath = Path.Combine(uploadedDirectory, $"{model.Name}.{model.File.ContentType.Split('/')[1]}");
+                using (var stream = new FileStream(filepath, FileMode.Create))
                 {
-                    Directory.CreateDirectory(uploadedDirectory);
+                    model.File.CopyTo(stream);
                 }
                 Notify.ShowSuccess("File uploaded", 5);
                 return RedirectToAction("Index");
