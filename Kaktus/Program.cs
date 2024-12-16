@@ -2,6 +2,8 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Kaktus.Data;
 using Kaktus.Models;
+using Kaktus.Services;
+using Kaktus.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +20,12 @@ builder.Services.AddIdentity<User, IdentityRole>().
    AddEntityFrameworkStores<Context>().
    AddDefaultTokenProviders();
 
+//Repository Db 
+builder.Services.AddScoped<IUserRepository, UserRepository>(); //Repository User
+
+// позволяет добраться до сессий
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,7 +40,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 app.UseNotyf();
 app.MapControllerRoute(

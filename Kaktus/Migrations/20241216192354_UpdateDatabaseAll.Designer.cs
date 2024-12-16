@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Kaktus.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241205121047_AddIdentity3")]
-    partial class AddIdentity3
+    [Migration("20241216192354_UpdateDatabaseAll")]
+    partial class UpdateDatabaseAll
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,13 +27,10 @@ namespace Kaktus.Migrations
 
             modelBuilder.Entity("Kaktus.Models.FileModel", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Bag_Id")
+                    b.Property<string>("IdUser")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -50,6 +47,8 @@ namespace Kaktus.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdUser");
 
                     b.ToTable("Files");
                 });
@@ -248,6 +247,17 @@ namespace Kaktus.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Kaktus.Models.FileModel", b =>
+                {
+                    b.HasOne("Kaktus.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
