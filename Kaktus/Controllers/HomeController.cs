@@ -8,6 +8,7 @@ using AspNetCoreHero.ToastNotification.Abstractions;
 using Kaktus.NotifyClasses;
 using Kaktus.Data;
 using Microsoft.AspNetCore.Authorization;
+using Kaktus.Services.Interfaces;
 
 namespace Kaktus.Controllers
 {
@@ -15,7 +16,7 @@ namespace Kaktus.Controllers
     public class HomeController : Controller
     {
 
-        public HomeController(INotyfService notifyService, Context context)
+        public HomeController(INotyfService notifyService, IUserRepository userRepository)
         {
             Notify.Configure(notifyService);
         }

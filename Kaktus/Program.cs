@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //Use Notify on Sait
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
+builder.Services.AddToastify(config=> { config.DurationInSeconds = 5; config.Position = Position.Right; config.Gravity = Gravity.Bottom; });
 //Service Porstgre Database
 builder.Services.AddDbContext<Context>(options =>
  options.UseNpgsql(builder.Configuration.GetConnectionString("MyDatabase")));
