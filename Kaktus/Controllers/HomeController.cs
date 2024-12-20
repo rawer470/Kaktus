@@ -4,11 +4,11 @@ using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using System.Text.Json;
-using AspNetCoreHero.ToastNotification.Abstractions;
 using Kaktus.NotifyClasses;
 using Kaktus.Data;
 using Microsoft.AspNetCore.Authorization;
 using Kaktus.Services.Interfaces;
+using NotificationExtensions;
 
 namespace Kaktus.Controllers
 {
@@ -16,9 +16,9 @@ namespace Kaktus.Controllers
     public class HomeController : Controller
     {
 
-        public HomeController(INotyfService notifyService, IUserRepository userRepository)
+        public HomeController(IUserRepository userRepository)
         {
-            Notify.Configure(notifyService);
+        this.
         }
 
         [Authorize]

@@ -1,5 +1,4 @@
 using System;
-using AspNetCoreHero.ToastNotification.Abstractions;
 using Kaktus.Models;
 using Kaktus.NotifyClasses;
 using Microsoft.AspNetCore.Authorization;
@@ -15,11 +14,10 @@ namespace Kaktus.Controllers
         private UserManager<User> userManager;
         private SignInManager<User> signInManager;
         public AccountController(UserManager<User> userManager,
-            SignInManager<User> signInManager, INotyfService notifyService)
+            SignInManager<User> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
-            Notify.Configure(notifyService);
         }
 
         [HttpGet]
@@ -51,7 +49,6 @@ namespace Kaktus.Controllers
                 }
 
                 ModelState.AddModelError(nameof(LoginModel.EmailAddress), "Invalid user or password");
-                Notify.ShowError("Invalid user or password", 5);
             }
 
             return View(details);
