@@ -6,6 +6,9 @@ namespace Kaktus.Services.Interfaces;
 public interface IFileManagerService
 {
     bool AddFile(FileViewModel fileView);
-    bool DeleteFile(FileModel file);
-    FileModel GetFileById(int id);
+    Task AddFileToDbAsync(FileModel fileModel);
+    bool DeleteFile(string id);
+    FileModel GetFileById(string id);
+    DownloadedFile GetFileBytesById(string id);
+    List<FileModel> GetAllUsersFiles();
 }

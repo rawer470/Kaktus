@@ -43,7 +43,6 @@ namespace Kaktus.Controllers
 
                     if (result.Succeeded)
                     {
-                        Notify.ShowSuccess("Success", 5);
                         return Redirect(returnUrl ?? "/");
                     }
                 }
@@ -99,7 +98,6 @@ namespace Kaktus.Controllers
         public IActionResult Quit()
         {
             signInManager.SignOutAsync();
-            Notify.ShowWarning("Вы вышли из вашего аккаунта", 5);
             return RedirectToAction("Index", "Home");
         }
     }

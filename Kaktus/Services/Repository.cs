@@ -20,6 +20,7 @@ public class Repository<T> : IRepository<T> where T : class
     public void Add(T entity)
     {
         dbSet.Add(entity);
+        Save();
     }
 
     public T Find(int id)
@@ -30,6 +31,7 @@ public class Repository<T> : IRepository<T> where T : class
     public void Remove(T entity)
     {
         dbSet.Remove(entity);
+        Save();
     }
 
     public void Save()
@@ -111,5 +113,6 @@ public class Repository<T> : IRepository<T> where T : class
     public void RemoveRange(IEnumerable<T> entity)
     {
         dbSet.RemoveRange(entity);
+        Save();
     }
 }

@@ -8,22 +8,25 @@ using Kaktus.NotifyClasses;
 using Kaktus.Data;
 using Microsoft.AspNetCore.Authorization;
 using Kaktus.Services.Interfaces;
-using NotificationExtensions;
-
 namespace Kaktus.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
-
-        public HomeController(IUserRepository userRepository)
+        private IUserRepository userRepository;
+        private IFileManagerService fileManager;
+        private IFileRepository fileRepository;
+        public HomeController(IUserRepository userRepository, IFileManagerService fileManager, IFileRepository fileRepository)
         {
-        this.
+            this.userRepository = userRepository;
+            this.fileManager = fileManager;
+            this.fileRepository = fileRepository;
         }
 
         [Authorize]
         public IActionResult Index(FileViewModel model)
         {
+            ViewBag.Files = fileManager.GetAllUsersFiles();
             return View(new FileViewModel());
         }
         [HttpGet]
@@ -37,23 +40,25 @@ namespace Kaktus.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                var currentDirectory = Directory.GetCurrentDirectory();
-                var uploadedDirectory = Path.Combine(currentDirectory, $"UploadFiles\\{User.Identity.Name}");
-                if (!Directory.Exists(uploadedDirectory)) { Directory.CreateDirectory(uploadedDirectory); }
-                var filepath = Path.Combine(uploadedDirectory, $"{model.Name}.{model.File.ContentType.Split('/')[1]}");
-                using (var stream = new FileStream(filepath, FileMode.Create))
-                {
-                    model.File.CopyTo(stream);
-                }
-                Notify.ShowSuccess("File uploaded", 5);
+                fileManager.AddFile(model);
                 return RedirectToAction("Index");
             }
             else
             {
-                Notify.ShowError("Incorrect data, refill the form", 5);
+                // Notify.ShowError("Incorrect data, refill the form", 5);
                 return View("Index", model);
             }
+
+        }
+
+        public IActionResult DowloadFile(string id)
+        {
+            DownloadedFile file = fileManager.GetFileBytesById(id);
+            if (file != null)
+            {
+                return File(file.BytesFile, "application/octet-stream", file.FileName);
+            }
+            return RedirectToAction("Index");
 
         }
 
