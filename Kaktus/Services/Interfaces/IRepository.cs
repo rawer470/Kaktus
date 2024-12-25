@@ -5,7 +5,7 @@ namespace Kaktus.Services.Interfaces;
 
 public interface IRepository<T> where T : class
 {
-    T Find(int id);
+    T Find(string id);
 
     IEnumerable<T> GetAll(
         Expression<Func<T, bool>> filter = null,

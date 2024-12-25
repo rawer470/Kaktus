@@ -72,7 +72,9 @@ public class FileManagerService : IFileManagerService
     public DownloadedFile GetFileBytesById(string id)
     {
         DownloadedFile file = new DownloadedFile();
-        file.FileName = fileRepository.FirstOrDefault(x => x.Id == id).Name;
+        FileModel fileModel = fileRepository.FirstOrDefault(x => x.Id == id);
+        if(fileModel==null){return null;}
+        file.FileName = fileModel.Name;
         var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), $"UploadFiles\\{httpContext.HttpContext?.User.Identity.Name}");
         string filePath = Path.Combine(uploadFolder, file.FileName);
         if (!System.IO.File.Exists(filePath))

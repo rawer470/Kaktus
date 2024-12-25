@@ -58,8 +58,18 @@ namespace Kaktus.Controllers
             {
                 return File(file.BytesFile, "application/octet-stream", file.FileName);
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return RedirectToAction("FileNotFound");
+            }
+            //return RedirectToAction("Index");
 
+        }
+
+
+        public IActionResult FileNotFound()
+        {
+            return View();
         }
 
     }
