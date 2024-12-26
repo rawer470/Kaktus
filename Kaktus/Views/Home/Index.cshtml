@@ -109,8 +109,8 @@
                 <div class="FileEdit">
                     <!--Share file -->
 
-                    <a data-bs-toggle="collapse" href="#collapseExample-@file.Name" role="button"
-                        aria-expanded="false" aria-controls="collapseExample-@file.Name">
+                    <a data-bs-toggle="collapse" href="#collapseShare-@file.Name" role="button" aria-expanded="false"
+                        aria-controls="collapseShare-@file.Name">
                         <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
                             fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
                             <path
@@ -139,10 +139,12 @@
                     </form>
                 </div>
             </div>
-            <div class="collapse" id="collapseExample-@file.Name">
-                <div class="card card-body">
-                    Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда
-                    пользователь активирует соответствующий триггер.
+            <div class="collapse" id="collapseShare-@file.Name">
+                <div class="card card-body" style="display: flex; flex-direction: row; align-items: center; ">
+                    <p class="textKaktus" style="font-size: larger; margin-right: 10px; margin-top: 10px;">Download link: </p>
+                    <input type="url" style="margin-right: 10px; min-width: 50%;" name="downloadLink" disabled
+                        value="https://kaktus3.ru/Home/DowloadFile/?id=@file.Id" />
+                    <button class="btn btn-primary" style="margin-right: 10px;">Copy</button>
                 </div>
             </div>
         }

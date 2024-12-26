@@ -31,10 +31,11 @@ public class FileManagerService : IFileManagerService
         FileModel file = new FileModel()
         {
             Id = Guid.NewGuid().ToString(),
-            Name = $"{fileView.Name}",
+            Name = fileView.Name,
             Path = filepath,
             Tag = fileView.Tag,
-            IdUser = userManager.GetUserId(httpContext.HttpContext?.User)
+            IdUser = userManager.GetUserId(httpContext.HttpContext?.User),
+            FileType = fileView.File.ContentType.Split('/')[1]
         };
         AddFileToDbAsync(file);
         return false;
@@ -73,8 +74,8 @@ public class FileManagerService : IFileManagerService
     {
         DownloadedFile file = new DownloadedFile();
         FileModel fileModel = fileRepository.FirstOrDefault(x => x.Id == id);
-        if(fileModel==null){return null;}
-        file.FileName = fileModel.Name;
+        if (fileModel == null) { return null; }
+        file.FileName = $"{fileModel.Name}.{fileModel.FileType}";
         var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), $"UploadFiles\\{httpContext.HttpContext?.User.Identity.Name}");
         string filePath = Path.Combine(uploadFolder, file.FileName);
         if (!System.IO.File.Exists(filePath))
