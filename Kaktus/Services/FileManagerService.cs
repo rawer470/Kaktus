@@ -31,7 +31,7 @@ public class FileManagerService : IFileManagerService
         FileModel file = new FileModel()
         {
             Id = Guid.NewGuid().ToString(),
-            Name = $"{fileView.Name}.{fileView.File.ContentType.Split('/')[1]}",
+            Name = $"{fileView.Name}",
             Path = filepath,
             Tag = fileView.Tag,
             IdUser = userManager.GetUserId(httpContext.HttpContext?.User)
