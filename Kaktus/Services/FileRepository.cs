@@ -20,7 +20,6 @@ public class FileRepository : Repository<FileModel>, IFileRepository
         List<FileModel> files = context.Files.Where(x => x.IdUser == userId).ToList();
         return files;
     }
-
     public void IncludeUser()
     {
         context.Users.Include(x => x.Files);

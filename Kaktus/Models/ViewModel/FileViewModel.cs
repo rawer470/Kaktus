@@ -11,7 +11,6 @@ public class FileViewModel
     public string Name { get; set; }
     [Required]
     public string Tag { get; set; }
-    [EmailAddress]
-    public string EmailTo { get; set; }
+    public string Password { get; set; }
 
 }

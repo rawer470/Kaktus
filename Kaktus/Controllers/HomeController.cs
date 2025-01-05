@@ -54,16 +54,30 @@ namespace Kaktus.Controllers
         public IActionResult DowloadFile(string id)
         {
             DownloadedFile file = fileManager.GetFileBytesById(id);
-            if (file != null)
-            {
-                return File(file.BytesFile, "application/octet-stream", file.FileName);
-            }
-            else
+            if (file.IsPassword) { ViewBag.IdFile = id; return View(); }
+            if (file != null) { return File(file.BytesFile, "application/octet-stream", file.FileName); }
+            else { return RedirectToAction("FileNotFound"); }
+        }
+
+        [HttpPost]
+        public IActionResult DowloadFile(string id, string password)
+        {
+            DownloadedFile file = fileManager.GetFileBytesById(id, password);
+            if (file.State == StateExc.FileNotFound)
             {
                 return RedirectToAction("FileNotFound");
             }
-            //return RedirectToAction("Index");
-
+            else if (file.State == StateExc.WrongPassword)
+            {
+                ViewBag.IdFile = id;
+                ViewBag.PassFile = password;
+                return View();
+            }
+            else
+            {
+                //Response.Redirect("Index");
+                return File(file.BytesFile, "application/octet-stream", file.FileName);
+            }
         }
 
 

@@ -69,9 +69,9 @@
                 <div class="card card-body"
                     style="display: flex; flex-direction: row; justify-content: space-between; align-items:center;">
                     <div style="margin-right: 15px;">
-                        <label asp-for="EmailTo" class="form-label"></label>
-                        <input type="email" name="emailTo" asp-for="@Model.EmailTo" value="@Model.EmailTo" />
-                        <span asp-validation-for="EmailTo"></span>
+                        <label asp-for="Password" class="form-label"></label>
+                        <input type="password" name="password" asp-for="@Model.Password" value="@Model.Password" />
+                        <span asp-validation-for="Password"></span>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Upload" />
                 </div>
@@ -125,7 +125,7 @@
                         <path fill-rule="evenodd"
                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                     </svg>
-                    <form asp-action="DowloadFile">
+                    <form method="get" asp-action="DowloadFile">
                         <input type="text" value="@file.Id" name="id" hidden />
                         <button type="submit" style="background-color: #89945C; border:0; width: 33; height: 33;">
                             <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
@@ -141,7 +141,8 @@
             </div>
             <div class="collapse" id="collapseShare-@file.Name">
                 <div class="card card-body" style="display: flex; flex-direction: row; align-items: center; ">
-                    <p class="textKaktus" style="font-size: larger; margin-right: 10px; margin-top: 10px;">Download link: </p>
+                    <p class="textKaktus" style="font-size: larger; margin-right: 10px; margin-top: 10px;">Download link:
+                    </p>
                     <input type="url" style="margin-right: 10px; min-width: 50%;" name="downloadLink" disabled
                         value="https://kaktus3.ru/Home/DowloadFile/?id=@file.Id" />
                     <button class="btn btn-primary" style="margin-right: 10px;">Copy</button>

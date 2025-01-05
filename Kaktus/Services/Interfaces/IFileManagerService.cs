@@ -9,6 +9,8 @@ public interface IFileManagerService
     Task AddFileToDbAsync(FileModel fileModel);
     bool DeleteFile(string id);
     FileModel GetFileById(string id);
+    FileModel GetFileById(string id, string password);
     DownloadedFile GetFileBytesById(string id);
+    DownloadedFile GetFileBytesById(string id, string password);
     List<FileModel> GetAllUsersFiles();
 }
