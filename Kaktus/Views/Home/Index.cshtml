@@ -118,16 +118,6 @@
                         </svg>
                     </a>
                     <!--Edit File-->
-<<<<<<< HEAD
-                    <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
-                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path
-                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                        <path fill-rule="evenodd"
-                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                    </svg>
-                    <form method="get" asp-action="DowloadFile">
-=======
                     <a data-bs-toggle="collapse" href="#collapseEdit-@file.Name" role="button" aria-expanded="false"
                         aria-controls="collapseEdit-@file.Name">
                         <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
@@ -139,7 +129,6 @@
                         </svg>
                     </a>
                     <form asp-action="DowloadFile">
->>>>>>> 7b90f0fc03da990071afa81b43a1ba7e75e1dac1
                         <input type="text" value="@file.Id" name="id" hidden />
                         <button type="submit" style="background-color: #89945C; border:0; width: 33; height: 33;">
                             <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
@@ -153,24 +142,15 @@
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="collapse" id="collapseShare-@file.Name">
-                <div class="card card-body" style="display: flex; flex-direction: row; align-items: center; ">
-                    <p class="textKaktus" style="font-size: larger; margin-right: 10px; margin-top: 10px;">Download link:
-                    </p>
-                    <input type="url" style="margin-right: 10px; min-width: 50%;" name="downloadLink" disabled
-                        value="https://kaktus3.ru/Home/DowloadFile/?id=@file.Id" />
-                    <button class="btn btn-primary" style="margin-right: 10px;">Copy</button>
-=======
             <div id="fileMancollapse">
                 <!--Delete-->
                 <div class="collapse" id="collapseEdit-@file.Name">
                     <div class="card card-body"
                         style="display: flex; flex-direction: row; align-items: center; justify-content:stretch ">
-                            <form method="post" asp-action="DeleteFile" asp-controller="Home">
-                                <input type="text" name="id" value="@file.Id" hidden />
-                                <input type="submit" style="width: 500%;" class="btn btn-danger" value="Delete" />
-                            </form>
+                        <form method="post" asp-action="DeleteFile" asp-controller="Home">
+                            <input type="text" name="id" value="@file.Id" hidden />
+                            <input type="submit" style="width: 500%;" class="btn btn-danger" value="Delete" />
+                        </form>
                     </div>
                 </div>
                 <!--ShareLink-->
@@ -182,7 +162,6 @@
                             value="https://kaktus3.ru/Home/DowloadFile/?id=@file.Id" />
                         <button class="btn btn-primary" style="margin-right: 10px;">Copy</button>
                     </div>
->>>>>>> 7b90f0fc03da990071afa81b43a1ba7e75e1dac1
                 </div>
             </div>
             <script>
