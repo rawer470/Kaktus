@@ -50,7 +50,6 @@ namespace Kaktus.Controllers
             }
 
         }
-
         public IActionResult DowloadFile(string id)
         {
             DownloadedFile file = fileManager.GetFileBytesById(id);
@@ -79,12 +78,18 @@ namespace Kaktus.Controllers
                 return File(file.BytesFile, "application/octet-stream", file.FileName);
             }
         }
-
-
         public IActionResult FileNotFound()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult DeleteFile(string id)
+        {
+            fileManager.DeleteFile(id);
+            FileModel file = fileRepository.Find(id);
+            fileRepository.Remove(file);
+            return RedirectToAction("Index");
+        }
     }
 }
