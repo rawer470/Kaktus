@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UploadFiles\Admin\" />
+    <Folder Include="UploadFiles/Admin/" />
   </ItemGroup>
-
 </Project>

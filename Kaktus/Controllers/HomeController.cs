@@ -89,6 +89,7 @@ namespace Kaktus.Controllers
             fileManager.DeleteFile(id);
             FileModel file = fileRepository.Find(id);
             fileRepository.Remove(file);
+            fileRepository.Save();
             return RedirectToAction("Index");
         }
     }
