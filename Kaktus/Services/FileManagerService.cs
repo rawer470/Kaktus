@@ -26,12 +26,13 @@ public class FileManagerService : IFileManagerService
     public bool AddFile(FileViewModel fileView)
     {
         var forTypeFile =fileView.File.FileName.Split('.');
-        fileView.Name = $"{fileView.Name}.{forTypeFile[forTypeFile.Length-1]}";
+        string typef =forTypeFile[forTypeFile.Length-1];
+        //fileView.Name = $"{fileView.Name}";
         var currentDirectory = Directory.GetCurrentDirectory();
         var uploadFolder = Path.Combine(currentDirectory, "UploadFiles");
         var uploadedDirectory = Path.Combine(uploadFolder, $"{httpContext.HttpContext?.User.Identity.Name}");
         if (!Directory.Exists(uploadedDirectory)) { Directory.CreateDirectory(uploadedDirectory); }
-        var filepath = Path.Combine(uploadedDirectory, $"{fileView.Name}");
+        var filepath = Path.Combine(uploadedDirectory, $"{fileView.Name}.{typef}");
         var filepathCrypto = Path.Combine(uploadedDirectory, $"{fileView.Name}.encrypted");
         using (var stream = new FileStream(filepath, FileMode.Create))
         {
@@ -47,7 +48,7 @@ public class FileManagerService : IFileManagerService
                 CryptoPath = filepathCrypto,
                 Tag = fileView.Tag,
                 IdUser = userManager.GetUserId(httpContext.HttpContext?.User),
-                FileType = fileView.File.ContentType.Split('/')[1],
+                FileType = typef,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(fileView.Password)
             };
             AddFileToDbAsync(file);
