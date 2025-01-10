@@ -25,11 +25,13 @@ public class FileManagerService : IFileManagerService
 
     public bool AddFile(FileViewModel fileView)
     {
+        var forTypeFile =fileView.File.FileName.Split('.');
+        fileView.Name = $"{fileView.Name}.{forTypeFile[forTypeFile.Length-1]}";
         var currentDirectory = Directory.GetCurrentDirectory();
         var uploadFolder = Path.Combine(currentDirectory, "UploadFiles");
         var uploadedDirectory = Path.Combine(uploadFolder, $"{httpContext.HttpContext?.User.Identity.Name}");
         if (!Directory.Exists(uploadedDirectory)) { Directory.CreateDirectory(uploadedDirectory); }
-        var filepath = Path.Combine(uploadedDirectory, $"{fileView.Name}.{fileView.File.ContentType.Split('/')[1]}");
+        var filepath = Path.Combine(uploadedDirectory, $"{fileView.Name}");
         var filepathCrypto = Path.Combine(uploadedDirectory, $"{fileView.Name}.encrypted");
         using (var stream = new FileStream(filepath, FileMode.Create))
         {
