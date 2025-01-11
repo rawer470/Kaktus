@@ -50,6 +50,7 @@ namespace Kaktus.Controllers
             }
 
         }
+        [AllowAnonymous]
         public IActionResult DowloadFile(string id)
         {
             DownloadedFile file = fileManager.GetFileBytesById(id);
@@ -59,6 +60,7 @@ namespace Kaktus.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult DowloadFile(string id, string password)
         {
             DownloadedFile file = fileManager.GetFileBytesById(id, password);
@@ -78,6 +80,7 @@ namespace Kaktus.Controllers
                 return File(file.BytesFile, "application/octet-stream", file.FileName);
             }
         }
+        [AllowAnonymous]
         public IActionResult FileNotFound()
         {
             return View();

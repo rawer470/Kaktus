@@ -75,9 +75,8 @@ public class FileManagerService : IFileManagerService
         return false;
     }
 
-
-    //File cryptoLogic
-    public void EncryptFile(object paramater)
+    #region File cryptoLogic
+    private void EncryptFile(object paramater)
     {
         if (paramater is CryptoFileParamater)
         {
@@ -116,7 +115,7 @@ public class FileManagerService : IFileManagerService
         return key;
     }
 
-    public void DecryptFile(string inputFile, string outputFile, string password)
+    private void DecryptFile(string inputFile, string outputFile, string password)
     {
         // Генерируем ключ и вектор инициализации (IV) из пароля
         using var aes = Aes.Create();
@@ -133,7 +132,7 @@ public class FileManagerService : IFileManagerService
 
         cryptoStream.CopyTo(outputStream);
     }
-
+#endregion
 
     public async Task AddFileToDbAsync(FileModel fileModel)
     {
