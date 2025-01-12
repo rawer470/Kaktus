@@ -25,8 +25,8 @@ public class FileManagerService : IFileManagerService
 
     public bool AddFile(FileViewModel fileView)
     {
-        var forTypeFile =fileView.File.FileName.Split('.');
-        string typef =forTypeFile[forTypeFile.Length-1];
+        var forTypeFile = fileView.File.FileName.Split('.');
+        string typef = forTypeFile[forTypeFile.Length - 1];
         //fileView.Name = $"{fileView.Name}";
         var currentDirectory = Directory.GetCurrentDirectory();
         var uploadFolder = Path.Combine(currentDirectory, "UploadFiles");
@@ -132,7 +132,7 @@ public class FileManagerService : IFileManagerService
 
         cryptoStream.CopyTo(outputStream);
     }
-#endregion
+    #endregion
 
     public async Task AddFileToDbAsync(FileModel fileModel)
     {
@@ -209,6 +209,7 @@ public class FileManagerService : IFileManagerService
     public DownloadedFile GetFileBytesById(string id, string password)
     {
         DownloadedFile file = new DownloadedFile();
+        if (password == null) { file.State = StateExc.PasswordNull; return file; }
         FileModel fileModel = GetFileById(id, password);
         if (fileModel.state == StateExc.FileNotFound)
         {

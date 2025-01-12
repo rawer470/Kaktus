@@ -1,3 +1,4 @@
+using AspNetCoreHero.ToastNotification;
 using Kaktus.Data;
 using Kaktus.Models;
 using Kaktus.Services;
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //Use Notify on Sait
 //FIX 
+builder.Services.AddNotyf(config=> { config.DurationInSeconds = 10;config.IsDismissable = true;config.Position = NotyfPosition.BottomRight; });
 
 //Service Porstgre Database
 builder.Services.AddDbContext<Context>(options =>

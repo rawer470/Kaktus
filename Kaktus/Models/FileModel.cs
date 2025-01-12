@@ -8,7 +8,8 @@ public enum StateExc
 {
     OK,
     FileNotFound,
-    WrongPassword
+    WrongPassword,
+    PasswordNull
 }
 public class FileModel
 {

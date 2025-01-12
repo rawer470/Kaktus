@@ -1,4 +1,5 @@
 using System;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Kaktus.Models;
 using Kaktus.NotifyClasses;
 using Microsoft.AspNetCore.Authorization;
@@ -14,10 +15,11 @@ namespace Kaktus.Controllers
         private UserManager<User> userManager;
         private SignInManager<User> signInManager;
         public AccountController(UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager, INotyfService notyf)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            Notify.Configure(notyf);
         }
 
         [HttpGet]
@@ -43,11 +45,14 @@ namespace Kaktus.Controllers
 
                     if (result.Succeeded)
                     {
+                        Notify.ShowSuccess("Success!", 2);
+                        if (returnUrl == null) { return RedirectToAction("Index", "Home"); }
                         return Redirect(returnUrl ?? "/");
                     }
                 }
 
                 ModelState.AddModelError(nameof(LoginModel.EmailAddress), "Invalid user or password");
+                Notify.ShowError("Wrong Login or Password", 2);
             }
 
             return View(details);
@@ -73,9 +78,8 @@ namespace Kaktus.Controllers
                 if (result.Succeeded)
                 {
                     await signInManager.SignOutAsync();
-
                     var res = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
-
+                    Notify.ShowSuccess("Success", 5);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -83,6 +87,7 @@ namespace Kaktus.Controllers
                     foreach (IdentityError error in result.Errors)
                     {
                         ModelState.AddModelError("", error.Description);
+                        Notify.ShowError("Wrong data", 2);
                     }
                 }
 
@@ -98,6 +103,7 @@ namespace Kaktus.Controllers
         public IActionResult Quit()
         {
             signInManager.SignOutAsync();
+            Notify.ShowWarning("Logout from Account", 2);
             return RedirectToAction("Index", "Home");
         }
     }
