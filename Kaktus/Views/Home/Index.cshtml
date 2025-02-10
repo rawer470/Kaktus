@@ -1,60 +1,83 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model FileViewModel
+
 <div class="MainPageDiv">
     <a style="color:#41230E; font-size:25px;">
         Drop or Choose Your File
     </a>
     <div class="Icons-FileUI">
-
         <div style="display:flex;">
             <a data-bs-toggle="collapse" href="#AddFile" role="button" aria-expanded="false" aria-controls="AddFile">
                 <!--File Plus-->
-                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6; margin:auto" width="32" height="32" fill="currentColor" class="bi bi-envelope-plus" viewBox="0 0 16 16">
-                    <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
-                    <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6; margin:auto" width="32" height="32"
+                    fill="currentColor" class="bi bi-envelope-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                    <path
+                        d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z" />
                 </svg>
             </a>
         </div>
-
         <div style="display:flex;">
             <a data-bs-toggle="collapse" href="#Upload" role="button" aria-expanded="false" aria-controls="Upload">
                 <!--Cloud-->
-                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6;margin:auto" width="32" height="32" fill="currentColor" class="bi bi-cloud-upload" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
-                    <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z" />
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6;margin:auto" width="32" height="32"
+                    fill="currentColor" class="bi bi-cloud-upload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
+                    <path fill-rule="evenodd"
+                        d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z" />
                 </svg>
             </a>
         </div>
-
         <div style="display:flex;">
             <a data-bs-toggle="collapse" href="#Share" role="button" aria-expanded="false" aria-controls="Share">
                 <!--Folder-->
-                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6; margin:auto" width="32" height="32" fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
-                    <path d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z" />
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:#ECE9D6; margin:auto" width="32" height="32"
+                    fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z" />
                 </svg>
             </a>
         </div>
-
     </div>
     <div id="target-container" style="width:100%;">
-        <div class="collapse" id="AddFile" style="width:100%;">
-            <div class="card card-body">
-                The addition of a function is currently being developed Add File
+        <form method="post" asp-antiforgery="true" asp-action="AddFile" asp-controller="Home" class="upload-form"
+            enctype="multipart/form-data">
+            <div class="collapse" id="AddFile" style="width:100%;">
+                <div class="card card-body">
+                    <div style="display: flex;" class="mb-3">
+                        <input class="form-control" type="file" name="file" asp-for="@Model.File" />
+                    </div>
+                    <span asp-validation-for="File"></span>
+                </div>
             </div>
-        </div>
-        <div class="collapse" id="Upload" style="width:100%;">
-            <div class="card card-body">
-                The addition of a function is currently being developed Upload File
+            <div class="collapse" id="Upload" style="width:100%;">
+                <div style="display: flex; flex-direction: row; justify-content: center;" class="card card-body">
+                    <div style="align-content:center; width: 50%; margin-left: 15px; margin-right: 15px;">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input type="text" name="name" asp-for="@Model.Name" value="@Model.Name" placeholder="Example Name" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div style="align-content:center; width: 50%; margin-left: 15px; margin-right: 15px;">
+                        <label asp-for="Tag" class="form-label"></label>
+                        <input type="color" name="tag" asp-for="@Model.Tag" value="@Model.Tag" />
+                        <span asp-validation-for="Tag"></span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="collapse" id="Share" style="width:100%;">
-            <div class="card card-body">
-                The addition of a function is currently being developed Share File
+            <div class="collapse" id="Share" style="width:100%;">
+                <div class="card card-body"
+                    style="display: flex; flex-direction: row; justify-content: space-between; align-items:center;">
+                    <div style="margin-right: 15px;">
+                        <label asp-for="Password" class="form-label" style="margin-right: 5px;">Password: </label>
+                        <input type="password" name="password" asp-for="@Model.Password" value="@Model.Password" placeholder="Password"/>
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Upload" />
+                </div>
             </div>
-        </div>
+        </form>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -74,29 +97,98 @@
         });
     </script>
     <div class="HistoryDiv">
-        @for (int i = 0; i < 4; i++)
+        @foreach (var file in ViewBag.Files)
         {
-            <div class="FileHist">
-                <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
-                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
-                </svg>
-                <p style="margin:5px;" class="textKaktusLight">Comments...</p>
-                <div class="FileEdit">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
-                        <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32" fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
-                        <path d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
-                        <path d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
-                    </svg>
+            <div id="fileMancollapse">
+                <!--Delete-->
+                <div class="collapse" id="collapseEdit-@file.Name">
+                    <div class="card card-body"
+                        style="display: flex; flex-direction: row; align-items: center; justify-content:stretch ">
+                        <form method="post" asp-action="DeleteFile" asp-controller="Home">
+                            <input type="text" name="id" value="@file.Id" hidden />
+                            <input type="submit" style="width: 500%;" class="btn btn-danger" value="Delete" />
+                        </form>
+                    </div>
+                </div>
+                <!--ShareLink-->
+                <div class="collapse" id="collapseShare-@file.Name">
+                    <div class="card card-body" style="display: flex; flex-direction: row; align-items: center; ">
+                        <p class="textKaktus" style="font-size: larger; margin-right: 10px; margin-top: 10px;">Download
+                            link: </p>
+                        <input type="url" style="margin-right: 10px; min-width: 50%;" name="downloadLink" disabled
+                            value="https://kaktus3.ru/Home/DowloadFile/?id=@file.Id" />
+                        <button class="btn btn-primary" style="margin-right: 10px;">Copy</button>
+                    </div>
                 </div>
             </div>
+            <div class="FileHist">
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
+                    fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                </svg>
+                <p style="margin:5px;" class="textKaktusLight">@file.Name</p>
+                <div class="FileEdit">
+                    <!--Share file -->
+
+                    <a data-bs-toggle="collapse" href="#collapseShare-@file.Name" role="button" aria-expanded="false"
+                        aria-controls="collapseShare-@file.Name">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
+                            fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                        </svg>
+                    </a>
+                    <!--Edit File-->
+                    <a data-bs-toggle="collapse" href="#collapseEdit-@file.Name" role="button" aria-expanded="false"
+                        aria-controls="collapseEdit-@file.Name">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
+                            fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                    </a>
+                    <form asp-action="DowloadFile">
+                        <input type="text" value="@file.Id" name="id" hidden />
+                        <button type="submit" style="background-color: #89945C; border:0; width: 33; height: 33;">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="margin:5px;color:#ECE9D6" width="32" height="32"
+                                fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
+                                <path
+                                    d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
+                                <path
+                                    d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+
+                    const collapseElements = document.querySelectorAll('#fileMancollapse .collapse');
+                    collapseElements.forEach(collapseEl => {
+                        new bootstrap.Collapse(collapseEl, { toggle: false, parent: '#fileMancollapse' });
+                    })
+                    document.addEventListener('click', (e) => {
+                        if (!e.target.dataset.target) {
+                            return;
+                        }
+                        const collapseElement = document.querySelector(e.target.dataset.target);
+                        const collapse = bootstrap.Collapse.getInstance(collapseElement);
+                        collapse.toggle();
+                    });
+
+                });
+            </script>
+
         }
     </div>
 </div>
 
-
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
