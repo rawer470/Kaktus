@@ -76,7 +76,7 @@ public class FileManagerService : IFileManagerService
     }
 
     #region File cryptoLogic
-    private void EncryptFile(object paramater)
+    private void EncryptFile(object? paramater)
     {
         if (paramater is CryptoFileParamater)
         {

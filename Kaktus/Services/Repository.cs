@@ -16,12 +16,12 @@ public class Repository<T> : IRepository<T> where T : class
         this.dbSet = context.Set<T>();
     }
     public void Add(T entity) { dbSet.Add(entity); Save(); }
-    public T Find(string id) { return dbSet.Find(id); }
+    public T? Find(string id) { return dbSet.Find(id); }
     public void Remove(T entity) { dbSet.Remove(entity); Save(); }
     public void Save() { context.SaveChanges(); }
-    public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
-        Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-        string includeProperties = null, bool isTracking = true)
+    public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null,
+        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+        string? includeProperties = null, bool isTracking = true)
     {
         IQueryable<T> query = dbSet;
         // есть ли фильтр
@@ -41,7 +41,7 @@ public class Repository<T> : IRepository<T> where T : class
         if (!isTracking) { query = query.AsNoTracking(); }
         return query.ToList();
     }
-    public T FirstOrDefault(Expression<Func<T, bool>> filter = null, string includeProperties = null, bool isTracking = true)
+    public T? FirstOrDefault(Expression<Func<T, bool>>? filter = null, string? includeProperties = null, bool isTracking = true)
     {
         IQueryable<T> query = dbSet;
         // есть ли фильтр

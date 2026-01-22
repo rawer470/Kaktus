@@ -13,16 +13,16 @@ public enum StateExc
 }
 public class FileModel
 {
-    public string Id { get; set; }
-    public string Name { get; set; }
-    public string Path { get; set; }
-    public string CryptoPath { get; set; }
-    public string Tag { get; set; }
-    public string FileType { get; set; }
-    public string PasswordHash { get; set; }
+    public string Id { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Path { get; set; } = string.Empty;
+    public string? CryptoPath { get; set; }
+    public string? Tag { get; set; }
+    public string? FileType { get; set; }
+    public string? PasswordHash { get; set; }
     [NotMapped]
     public StateExc state { get; set; }
-    public string IdUser { get; set; }
+    public string? IdUser { get; set; }
     [ForeignKey("IdUser")]
-    public User User { get; set; }
+    public User? User { get; set; }
 }
